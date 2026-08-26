@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고비 매치 - 모래 위의 이야기</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg-layer"></div>
+
+<div id="app">
+  <header id="hud">
+    <h1>고비 매치</h1>
+    <div id="hud-row">
+      <div class="hud-box hud-level">
+        <span class="hud-label">LEVEL</span>
+        <span id="level-value">1</span>
+      </div>
+      <div class="hud-box">
+        <span class="hud-label">SCORE</span>
+        <span id="score-value">0</span>
+      </div>
+      <div class="hud-box hud-progress">
+        <span class="hud-label">다음 이야기까지</span>
+        <div id="story-bar-track">
+          <div id="story-bar-fill"></div>
+        </div>
+        <span id="story-remain">1000</span>
+      </div>
+      <button id="restart-btn" title="보드 다시 섞기">⟳ 새 보드</button>
+    </div>
+  </header>
+
+  <main id="board-wrap">
+    <div id="board"></div>
+    <div id="combo-popup"></div>
+  </main>
+</div>
+
+<div id="vn-overlay" class="hidden">
+  <img id="vn-bg" alt="">
+  <button id="vn-skip" type="button">스킵 ▶▶</button>
+  <div id="vn-portrait-wrap">
+    <img id="vn-portrait" alt="">
+  </div>
+  <div id="vn-box-wrap">
+    <div id="vn-speaker"></div>
+    <div id="vn-box">
+      <div id="vn-text"></div>
+      <div id="vn-next">▼ 클릭하여 계속</div>
+    </div>
+  </div>
+</div>
+
+<script src="story.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
