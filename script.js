@@ -16,7 +16,6 @@
     { key: 'rock', img: 'images/tile_yellow_rock_goby.png' },
     { key: 'helfrich', img: 'images/tile_helfrich_goby.png' },
   ];
-  const SHRIMP_IMG = 'images/tile_pistol_shrimp.png';
   const TYPE_KEYS = TILE_DEFS.map((t) => t.key);
   const TYPE_IMG = Object.fromEntries(TILE_DEFS.map((t) => [t.key, t.img]));
 
@@ -117,11 +116,9 @@
 
   function applyTileSkin(tile) {
     tile.dom.classList.remove('special-line-h', 'special-line-v', 'special-burst');
+    tile.dom.style.backgroundImage = `url('${TYPE_IMG[tile.type]}')`;
     if (tile.special) {
-      tile.dom.style.backgroundImage = `url('${SHRIMP_IMG}')`;
       tile.dom.classList.add('special-' + tile.special);
-    } else {
-      tile.dom.style.backgroundImage = `url('${TYPE_IMG[tile.type]}')`;
     }
   }
 
